@@ -1,6 +1,15 @@
 var counter = 0;
 var tBody = document.querySelector('tbody');
 
+function firstAdd(event){
+    if(event.keyCode === 13){
+    	event.preventDefault();
+        addItem();
+    } else {
+    	return false;
+    }
+}
+
 function addItem () {
 	var form = document.querySelector("form");
 	var listItem = form.listInput.value;
@@ -74,9 +83,23 @@ function unComplete(ID) {
 
 function editItem(findID) {
 	var numID = Number(findID.slice(-1));
+	var hold = document.querySelector('#item' + numID).innerHTML;
 
 	var getTD = document.querySelector('#item' + numID);
+
 	getTD.innerHTML = '<input type="text" id="newInput'+ numID +'"><a href="#" class="button" id="newSubmit'+ numID +'">Save</a>';
+	var testing = document.querySelector('#newInput' + numID);
+	testing.value = hold;
+
+	var newInput = document.querySelector('#newInput' + numID);
+	newInput.addEventListener('keypress', function() {
+		if(event.keyCode === 13){
+			var newInputID = document.querySelector('#newInput' + numID).value;
+			getTD.innerHTML = newInputID;
+	    } else {
+	    	return false;
+	    }
+	});
 
 	var submitID = document.querySelector('#newSubmit' + numID);
 	submitID.addEventListener("click", function() {
