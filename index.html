@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <form>
+      <div class="row collapse">
+        <div class="large-9 columns">
+          <input name="listInput" type="text" placeholder="What do you want to accomplish?">
+        </div>
+        <div class="large-3 columns">
+          <a href="#" class="button postfix" onclick="addItem()">Add ToDo Item</a>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="large-12 columns large-centered">
+        <table>
+        <thead>
+          <tr>
+            <th>To-Do List</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
