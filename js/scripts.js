@@ -112,4 +112,4 @@ function deleteItem(findTrID) {
 	var numID = Number(findTrID.slice(-1));
 	var getTR = document.querySelector('#tr' + numID);
 	tBody.removeChild(getTR);
-}
+};
